@@ -15,8 +15,8 @@ class PhotoController extends Controller
     public function index()
     {
         $photos = Photo::get();
-        var_dump($photos);
-        return view('home', compact('photos'));
+/*         var_dump($photos);
+ */        return view('home', compact('photos'));
     }
 
     /**
