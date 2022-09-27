@@ -1,19 +1,26 @@
 #gallery{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     column-gap: 0;
+    margin: 5vh 0 5vh 0;
 }
- nav{
-    background-color: black;
+
+nav {
+    background-color: #170a25;
     width: 100%;
-    height: 5vh;
- }
+    height: 8vh;
+}
+.navbar-brand {
+    color: #ffffff;
+}
+.navbar-brand:hover {
+    color: rgb(225, 225, 177);
+}
 
 img {
-    max-width: 25vw;
+    max-width: 20vw;
 }
 
-body {
-    margin: 0;
-    background-color: black;
+.zoom:hover img {
+    transform: scale(1.1);
 }

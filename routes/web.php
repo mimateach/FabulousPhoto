@@ -16,8 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+}); 
 
-Auth::routes();
-
-Route::get('/', [PhotoController::class, 'index']);
+/* Auth::routes();
+ */
+Route::get('/home', [PhotoController::class, 'index']);
+Route::get('/', [App\Http\Controllers\PhotoController::class, 'index'])->name('home');
+Route::delete('/delete/{id}', [PhotoController::class, 'destroy'])->name('remove');
+Route::get('/add', [PhotoController::class, 'create'])->name('newphoto');
+Route::post('/', [PhotoController::class, 'store'])->name('storePhoto');

@@ -16,7 +16,7 @@ class PhotoController extends Controller
     {
         $photos = Photo::get();
 /*         var_dump($photos);
- */        return view('home', compact('photos'));
+ */         return view('home', compact('photos'));
     }
 
     /**
@@ -27,6 +27,7 @@ class PhotoController extends Controller
     public function create()
     {
         //
+        return view ('addPhoto');
     }
 
     /**
@@ -38,6 +39,17 @@ class PhotoController extends Controller
     public function store(Request $request)
     {
         //
+        $photo = request()->except('_token');
+/*         $photo = Photo::create(
+           [
+               'name' => $photo->name,
+               'artist' => $photo->artist,
+               'img'   => $photo->img,
+               'location' => $photo->location,
+           ]
+           );  */
+            Photo::create($photo);
+            return redirect()->route('home');
     }
 
     /**
@@ -49,6 +61,7 @@ class PhotoController extends Controller
     public function show($id)
     {
         //
+       
     }
 
     /**
@@ -83,5 +96,7 @@ class PhotoController extends Controller
     public function destroy($id)
     {
         //
+        Photo::destroy($id);
+        return redirect()->route('home');
     }
 }

@@ -23,8 +23,16 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         Photo::factory()->create(['name' => 'Nenúfares', 'artist' => 'Monet', 'img' => 'https://i.pinimg.com/originals/b3/50/21/b35021c58bc5bbcb62361a72775ffc8c.jpg', 'location' => 'Louvre']);
-        Photo::factory(40)->create();
+        Photo::factory()->create(['name' => 'Nenúfares', 'artist' => 'Monet', 'img' => 'https://i.pinimg.com/originals/b3/50/21/b35021c58bc5bbcb62361a72775ffc8c.jpg', 'location' => 'Louvre']);
+        Photo::factory()->create(['name' => 'Nenúfares', 'artist' => 'Monet', 'img' => 'https://i.pinimg.com/originals/b3/50/21/b35021c58bc5bbcb62361a72775ffc8c.jpg', 'location' => 'Louvre']);
+        Photo::factory()->create(['name' => 'Nenúfares', 'artist' => 'Monet', 'img' => 'https://i.pinimg.com/originals/b3/50/21/b35021c58bc5bbcb62361a72775ffc8c.jpg', 'location' => 'Louvre']);
+        Photo::factory()->create(['name' => 'Nenúfares', 'artist' => 'Monet', 'img' => 'https://i.pinimg.com/originals/b3/50/21/b35021c58bc5bbcb62361a72775ffc8c.jpg', 'location' => 'Louvre']);
+        Photo::factory()->create(['name' => 'Nenúfares', 'artist' => 'Monet', 'img' => 'https://i.pinimg.com/originals/b3/50/21/b35021c58bc5bbcb62361a72775ffc8c.jpg', 'location' => 'Louvre']);
+        Photo::factory()->create(['name' => 'Nenúfares', 'artist' => 'Monet', 'img' => 'https://i.pinimg.com/originals/b3/50/21/b35021c58bc5bbcb62361a72775ffc8c.jpg', 'location' => 'Louvre']);
 
-        User::factory()->create(['name' => 'Admin', 'email' => 'admin@fabulousphoto.com', 'password' => 'fabulous']);
-    }
+        /*         Photo::factory(40)->create();
+
+ */
+/*         User::factory()->create(['name' => 'Admin', 'email' => 'admin@fabulousphoto.com', 'password' => 'fabulous']);
+ */    }
 }
