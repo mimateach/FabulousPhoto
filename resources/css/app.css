@@ -10,6 +10,10 @@
  }
 
 img {
-    max-width: 40vw;
-    border: solid white 1vw;
+    max-width: 25vw;
+}
+
+body {
+    margin: 0;
+    background-color: black;
 }
