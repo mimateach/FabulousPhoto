@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.app')
 
+@section('content')
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,7 +41,7 @@
 </head>
 
 <body class="antialiased">
-    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+<!--     <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
         @if (Route::has('login'))
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
             @auth
@@ -55,12 +55,11 @@
             @endauth
         </div>
         @endif
-    </div>
+    </div> -->
+
     <section id="gallery">
         @foreach ($photos as $photo)
-
-
-        <div class="grid lg:grid-cols-3 gap-6">
+        <div class="grid">
             <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover" style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
                 <img src="{{$photo->img}}" class="w-full transition duration-300 ease-linear align-middle" />
                 <a href="#!">

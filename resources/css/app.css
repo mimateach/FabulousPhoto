@@ -1,0 +1,15 @@
+#gallery{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 0;
+}
+ nav{
+    background-color: black;
+    width: 100%;
+    height: 5vh;
+ }
+
+img {
+    max-width: 40vw;
+    border: solid white 1vw;
+}
