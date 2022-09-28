@@ -15,8 +15,9 @@ class PhotoController extends Controller
     public function index()
     {
         $photos = Photo::get();
-/*         var_dump($photos);
- */         return view('home', compact('photos'));
+        /*         var_dump($photos);
+ */
+        return view('home', compact('photos'));
     }
 
     /**
@@ -27,7 +28,7 @@ class PhotoController extends Controller
     public function create()
     {
         //
-        return view ('addPhoto');
+        return view('addPhoto');
     }
 
     /**
@@ -40,7 +41,7 @@ class PhotoController extends Controller
     {
         //
         $photo = request()->except('_token');
-/*         $photo = Photo::create(
+        /*         $photo = Photo::create(
            [
                'name' => $photo->name,
                'artist' => $photo->artist,
@@ -48,8 +49,8 @@ class PhotoController extends Controller
                'location' => $photo->location,
            ]
            );  */
-            Photo::create($photo);
-            return redirect()->route('home');
+        Photo::create($photo);
+        return redirect()->route('home');
     }
 
     /**
@@ -61,7 +62,10 @@ class PhotoController extends Controller
     public function show($id)
     {
         //
-       
+        $photo = Photo::find($id);
+        return view('detailsPhoto', compact('photo'));
+
+
     }
 
     /**
@@ -73,6 +77,8 @@ class PhotoController extends Controller
     public function edit($id)
     {
         //
+        $photo = Photo::find($id);
+        return view('editPhoto', compact('photo'));
     }
 
     /**
@@ -85,7 +91,11 @@ class PhotoController extends Controller
     public function update(Request $request, $id)
     {
         //
-    }
+            $photo = request()->except(['_token', '_method']);
+            Photo::where('id', '=', $id)->update($photo);
+            return redirect()->route('home');
+        }
+
 
     /**
      * Remove the specified resource from storage.
@@ -95,8 +105,8 @@ class PhotoController extends Controller
      */
     public function destroy($id)
     {
-        //
-        Photo::destroy($id);
+        $photo =  Photo::destroy($id);
+
         return redirect()->route('home');
     }
 }
