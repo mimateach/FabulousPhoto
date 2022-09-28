@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\PhotoController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,13 +25,19 @@ Route::get('/', function () {
  */
 Route::get('/home', [PhotoController::class, 'index']);
 Route::get('/', [App\Http\Controllers\PhotoController::class, 'index'])->name('home');
+
+// Route Delete
 Route::delete('/delete/{id}', [PhotoController::class, 'destroy'])->name('remove');
-Route::get('/add', [PhotoController::class, 'create'])->name('newPhoto');
+
+// Routes Create
+Route::get('/add', [PhotoController::class, 'create'])->name('newPhoto')->middleware('isAdmin');
 Route::post('/', [PhotoController::class, 'store'])->name('storePhoto');
 
-// Routes edit
+// Routes Edit & Update
 Route::get('/edit/{id}', [PhotoController::class, 'edit'])->name('edit');
 Route::patch('/photo/{id}', [PhotoController::class, 'update'])->name('update');
 
-// Routes show
+// Route Details
 Route::get('/detailsPhoto/{id}', [PhotoController::class, 'show'])->name('detail');
+
+//Route

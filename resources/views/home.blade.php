@@ -19,7 +19,8 @@
 </head>
 
 <body class="antialiased">
-    <nav class="navbar navbar-expand-md navbar-light shadow-sm">
+
+<nav class="navbar navbar-expand-md navbar-light shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
                 FabulousPhoto
@@ -41,9 +42,9 @@
                                 <!--ruta para login-->
                                 Inicia sesión
                             </a>
-                            <!--<a class="dropdown-item" href=""> 
+                            <a class="dropdown-item" href=""> 
                                     //ruta para registro
-                                Regístrate</a> -->
+                                Regístrate</a> 
                         </div>
                     </li>
 
@@ -92,6 +93,9 @@
             </div>
         </div>
     </nav>
+
+
+
     <div id="addPhoto">
         <a href="{{ route ('newPhoto') }}">Añadir foto</a>
     </div>

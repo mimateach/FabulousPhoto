@@ -63,8 +63,7 @@ class PhotoController extends Controller
     {
         //
         $photo = Photo::find($id);
-        return view('detailsPhoto', compact('photo'));
-
+        
 
     }
 
