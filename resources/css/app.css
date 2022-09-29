@@ -1,3 +1,18 @@
+:root{
+    --background-color-dark: #08152E;
+    --background-color-light: #FFFFFF;
+    --color-blue: #08152E;
+    --color-yellow: #F5FFB6;
+    --color-green: #E1FFB1;
+}
+
+.topPanel{
+    background-color: var(--background-color-dark);
+    height: 40vh;
+    display: flex;
+}
+
+
 #gallery{
     display: grid;
     grid-template-columns: auto auto auto;
@@ -6,7 +21,7 @@
 }
 
 nav {
-    background-color: #170a25;
+    background-color: var(--background-color-light);
     width: 100%;
     height: 8vh;
 }

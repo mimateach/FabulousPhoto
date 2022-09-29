@@ -6,12 +6,25 @@
 
 <body class="antialiased">
 
-    <div class="options">
+    <div class="topPanel">
+        <div class="pageTitle">
+                <div class="icon"></div>
+                <div class="text"></div>
+        </div>
+        <div class="options">
+            <div class="addPhoto">
+                <div class="icon add"></div>
+                <div class="button add"></div>
+            </div>
+            <div class="goFav">
+                <div class="icon fav"></div>
+                <div class="button fav"></div>
+            </div>
+        </div>
+    </div>
         <div id="addPhoto">
             <a href="{{ route ('newPhoto') }}">Añadir foto</a>
         </div>
-
-    </div>
 
         <div class="container">
             <div class="row">
