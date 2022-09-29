@@ -8,7 +8,8 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\Photo;
 use Illuminate\Foundation\Testing\assert;
-use Tests\Feature\AssertCount
+use Tests\Feature\AssertCount;
+
 
 class CrudTest extends TestCase
 {
@@ -18,7 +19,19 @@ class CrudTest extends TestCase
      * @return void
      */
     use RefreshDatabase;
-use assertCount;
+
+    //Test for Create
+    public function test_user_can_add_photos(){
+        $this->withExceptionHandling();
+        
+        $response = $this->post(route('storePhoto'),[
+                'name' => 'name',
+                'artist' => 'artist',
+                'img' => 'img',
+                'location' => 'location',
+        ]);
+        $this->assertCount(1, Photo::all());
+    }
 
     //Test for Read
     public function test_Photos_appear_in_home()
@@ -32,17 +45,29 @@ use assertCount;
         $response->assertStatus(200)->assertViewIs('home');
     }
 
+
+    
+    // Test for Update
+    public function test_user_can_update_Photos() {
+        $this->withExceptionHandling();
+
+        $photo = Photo::factory()->create();
+        
+        $this->assertCount(1, Photo::all());
+
+        $response = $this->patch(route('update', $photo->id), ['name'=> 'New Name']);
+        $this->assertEquals('New Name', Photo::first()->name);
+    }
+
     // Test for Delete
     public function test_Photos_can_be_deleted(){
         $this->withExceptionHandling();
-        $photo = Photo::factory(3)->create();
-        $this->$assertCount(1, Photo::all());
+        $photo = Photo::factory()->create();
+        $this->assertCount(1, Photo::all());
         $response = $this->delete(route('remove', $photo->id));
-    }   
 
-    //Test for Create
-    public function test_user_can_add_photos(){
+    } 
 
-    }
+    
 }
 
