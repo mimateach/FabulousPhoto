@@ -1,27 +1,33 @@
-:root{
-    --background-color-dark: #08152E;
-    --background-color-light: #FFFFFF;
-    --color-blue: #08152E;
-    --color-yellow: #F5FFB6;
-    --color-green: #E1FFB1;
+:root {
+    --background-color-dark: #08152e;
+    --background-color-light: #ffffff;
+    --color-blue: #08152e;
+    --color-yellow: #f5ffb6;
+    --color-green: #e1ffb1;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,500;0,700;0,800;1,200;1,300;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,500;0,700;0,800;1,200;1,300;1,400&display=swap");
 
-*{
-    font-family: 'Nunito', sans-serif;
+* {
+    font-family: "Nunito", sans-serif;
 }
+
+/*Style for navbar- app*/
 
 .navbar {
     display: flex;
     align-items: center;
     color: var(--color-blue);
 }
-
-.navBar a{
+nav {
+    background-color: var(--background-color-light);
+    width: 100%;
+    height: 8vh;
+}
+.navBar a {
     color: var(--color-blue);
 }
-li{
+li {
     color: var(--color-blue);
     padding-top: 1.5vh;
 }
@@ -30,54 +36,71 @@ li{
     width: 5vw;
 }
 
-#topPanel{
+.title img {
+    height: 7vh;
+}
+
+/*Style for home content*/
+
+#topPanel {
     background-color: var(--background-color-dark);
     display: flex;
-    justify-content: center;    
+    justify-content: center;
     padding: 3vw;
-    color: white; 
-    font-family: 'Nunito', sans-serif;
+    color: white;
+    font-family: "Nunito", sans-serif;
 }
 
 .options .icon {
+    width: 4vw;
+    margin: 1vh;
+    margin-top: 2vh;
+}
+.house{
+    width: 4vw;
+    margin: 1vh;
+    margin-top: 2vh;
+}
+
+.pageTitle {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 700;
+}
+
+.pageName {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page {
+    font-size: 3vh;
+}
+
+.options {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add,
+.goFav,
+.goHome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.camera, .heart {
     width: 6vw;
     margin: 1vh;
 }
 
-.pageTitle{
-    width: 60vw;
-display: flex;
-flex-direction: column;
-align-items: center;
-font-weight: 700;
-}
-
-.pageName{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 2.5vh;
-}
-
-.options {
-width: 100%;
-display:flex;
-justify-content: space-between
-}
-
-.add, .goFav{
-display:flex;
-flex-direction: column;
-justify-content: center;    
-align-items: center;
-}
-
-.camera{
-    width: 10vw;
-    margin: 1vh;
-}
-
-.options .button{
+.options .button {
     background-color: var(--color-yellow);
     border: none;
     border-radius: 1.5vh;
@@ -87,47 +110,82 @@ align-items: center;
     font-size: 2vh;
 }
 
+/*Style for gallery items */
 
-nav {
-    background-color: var(--background-color-light);
-    width: 100%;
-    height: 8vh;
+.title {
+    font-family: "Nunito", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4vh;
+    color: var(--color-blue);
 }
 
-
-
-.title{
-font-family: 'Nunito', sans-serif;
-font-style: normal;
-font-weight: 700;
-font-size: 4vh;
-color: var(--color-blue)
-}
-
-#photoDetails{
-    display:flex;
+#photoDetails {
+    display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+}
+#optionsPhoto {
+    width: 35%;
+    display: flex;
+    justify-content: flex-end;
 }
 
-#optionsPhoto form{
+#optionsPhoto form {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-#optionsPhoto .icon{
-    width: 2vw;
+#optionsPhoto .icon {
+    width: 3vw;
+    height: auto;
 }
 
-.name{
-font-family: 'Nunito', sans-serif;
-font-weight: 600;
-font-size: 2.5vh;
+.name {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 2.5vh;
+    width: 75%;
 }
-.artist{
-    font-family: 'Nunito', sans-serif;
+.artist {
+    font-family: "Nunito", sans-serif;
     font-weight: 500;
     font-size: 2vh;
 }
 
-
+@media (max-width: 750px) {
+    .options {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .options .button {
+        background-color: transparent;
+        border: none;
+        border-radius: 1.5vh;
+        padding: 1vh 1.5vw 1vh 1.5vw;
+        color: white;
+        font-weight: bold;
+        font-size: 1.5vh;
+    }
+    .options .icon {
+        width: 6vw;
+        margin-top: 1vh;
+        margin-bottom: 0.5vh;
+    }
+    .house{
+        width: 6vw;
+        margin-top: 1vh;
+        margin-bottom: 0.5vh;
+    }
+    .page {
+        font-size: medium;
+    }
+    #optionsPhoto {
+        height: 5vh;
+    }
+    #optionsPhoto .icon {
+        width: 5vw;
+    }
+}

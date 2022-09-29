@@ -44,9 +44,9 @@ Route::get('/detail/{id}', [PhotoController::class, 'detail'])->name('details');
  
 // Favourite photos - routes
 Route::group(['middleware' => ['auth']], function () {
-Route::get('/favourites', [FavouritesController::class, 'listFavourites'])->name('favourites');
-Route::get('/addToFav/{id}', [FavouritesController::class, 'addToFav'])->name('addFav');
-Route::get('/removeFav/{id}', [FavouritesController::class, 'removeFromFav'])->name('removeFav');
+Route::get('/favourites', [PhotoController::class, 'listFavourites'])->name('favourites');
+Route::get('/addToFav/{id}', [PhotoController::class, 'addToFav'])->name('addFav');
+Route::get('/removeFav/{id}', [PhotoController::class, 'removeFromFav'])->name('removeFav');
 });
 
 

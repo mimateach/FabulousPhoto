@@ -20,7 +20,7 @@
                 </div>
                 <div class="goFav">
                     <div class="fav">
-                        <img src="{{ asset('img/heartGreen.png') }}" class="icon camera">
+                        <img src="{{ asset('img/heartGreen.png') }}" class="icon">
                     </div>
                     <a href="{{ route ('favourites') }}" class="button fav"><button>FAVORITAS</button></a>
                 </div>

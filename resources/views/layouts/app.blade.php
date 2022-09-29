@@ -70,9 +70,6 @@
                             </div>
                         </li>
                         @endguest
-
-                        <!--@if (Auth::check() && Auth::user()->isAdmin))
-                    @endif-->
                     </ul>
                 </div>
             </div>
