@@ -18,7 +18,7 @@
     color: var(--color-blue);
 }
 
-a{
+.navBar a{
     color: var(--color-blue);
 }
 li{
@@ -104,8 +104,30 @@ font-size: 4vh;
 color: var(--color-blue)
 }
 
+#photoDetails{
+    display:flex;
+    justify-content: space-between;
+}
 
-background: url(camera (1).png);
-transform: rotate(90deg);
+#optionsPhoto form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#optionsPhoto .icon{
+    width: 2vw;
+}
+
+.name{
+font-family: 'Nunito', sans-serif;
+font-weight: 600;
+font-size: 2.5vh;
+}
+.artist{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    font-size: 2vh;
+}
 
 

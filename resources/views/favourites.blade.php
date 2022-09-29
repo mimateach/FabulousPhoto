@@ -47,9 +47,10 @@
             </div>
         </div>
     </div>
+
 <div class="container">
             <div class="row">
-            @foreach ($photos as $photo)
+            @foreach ($photo_user as $photo)
                 <div class="col-md-4 mt-3 col-lg-4">
                     <img src="{{$photo->img}}" class="img-fluid" alt="image">
                     <div>{{$photo->name}}</div>
@@ -62,6 +63,7 @@
                             <a class="editBtn" href="{{ route ('edit', ['id'=> $photo->id]) }}">✏️</a>
                             <a class="detailBtn" href="{{ route ('details', ['id'=> $photo->id]) }}">👀</a>
                             <a class="favBtn" href="{{ route ('addFav', [$photo->id]) }}" onclick="return confirm('{{$photo->name}} Added to your Favourites!')">FAV</a>
+                            
                             <a class="favBtn" href="{{ route ('removeFav', [$photo->id]) }}">Remove Fav</a>
                         </form>
                     </div>

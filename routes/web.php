@@ -22,6 +22,44 @@ Route::get('/', function () {
 }); 
 
 Auth::routes();
+ 
+// Read photos - routes
+Route::get('/home', [PhotoController::class, 'index']);
+Route::get('/', [App\Http\Controllers\PhotoController::class, 'index'])->name('home');
+ 
+// Delete photos - routes
+Route::delete('/delete/{id}', [PhotoController::class, 'destroy'])->middleware('isAdmin', 'auth')->name('remove');
+
+ 
+// Create photos - routes
+Route::get('/add', [PhotoController::class, 'create'])->name('newPhoto')->middleware('isAdmin', 'auth');
+Route::post('/', [PhotoController::class, 'store'])->name('storePhoto');
+ 
+// Edit/Update photos - routes
+Route::get('/edit/{id}', [PhotoController::class, 'edit'])->name('edit')->middleware('isAdmin', 'auth');
+Route::patch('/photo/{id}', [PhotoController::class, 'update'])->name('update');
+ 
+// Photos detail - routes
+Route::get('/detail/{id}', [PhotoController::class, 'detail'])->name('details');
+ 
+// Favourite photos - routes
+Route::group(['middleware' => ['auth']], function () {
+Route::get('/favourites', [FavouritesController::class, 'listFavourites'])->name('favourites');
+Route::get('/addToFav/{id}', [FavouritesController::class, 'addToFav'])->name('addFav');
+Route::get('/removeFav/{id}', [FavouritesController::class, 'removeFromFav'])->name('removeFav');
+});
+
+
+
+
+
+
+
+
+
+
+
+Auth::routes();
 
 //Routes Create
 Route::get('/add', [PhotoController::class, 'create'])->name('newPhoto')->middleware('isAdmin', 'auth');
