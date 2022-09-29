@@ -14,7 +14,7 @@ class DetailTest extends TestCase
      *
      * @return void
      */
-    public function test_Photo_appears_in_Details()
+/*         public function test_photo_appears_in_detailView()
     {
             $this->withExceptionHandling();
             $photo = Photo::factory()->create();
@@ -22,5 +22,5 @@ class DetailTest extends TestCase
             $response->assertStatus(200)
                         ->assertViewIs('detailsPhoto'); 
             $response->assertSee('detail');
-    }
+    }  */
 }

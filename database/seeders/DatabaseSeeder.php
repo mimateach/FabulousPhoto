@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
         
         Photo::factory(40)->create();
 
-        User::factory()->create(['name' => 'user', 'email' => 'visitor@fabphoto.com', 'isAdmin' => false]);
+        User::factory()->create(['name' => 'user', 'email' => 'user@fabphoto.com', 'isAdmin' => false]);
         User::factory()->create(['name' => 'Admin', 'email' => 'admin@fabphoto.com', 'isAdmin' => true]);
 /*         User::factory()->create(['name' => 'Admin', 'email' => 'super@fabphoto.com', 'password' => 'fabuloso', 'isSuperadmin' => true]);
  */

@@ -68,6 +68,9 @@ class CrudTest extends TestCase
 
     } 
 
-    
+    // Test for Details View
+
+
+
 }
 

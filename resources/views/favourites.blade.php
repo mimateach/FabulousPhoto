@@ -18,7 +18,7 @@
                     <div class="fav">
                         <img src="{{ asset('img/homeGreen.png') }}" class="icon house">
                     </div>
-                    <div class="button fav"><button>INICIO</button></div>
+                    <a href="{{ route ('home') }}" class="button fav"><button>INICIO</button></a>
                 </div>
         </div>
     </div>
