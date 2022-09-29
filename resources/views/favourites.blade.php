@@ -3,7 +3,7 @@
 
 @section('content')
 
-@foreach ($photo_user as $photo)
+<!-- @foreach ($photo_user as $photo)
 <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover" data-mdb-ripple="true" data-mdb-ripple-color="dark">
                 
                 <img src="{{$photo->img}}" class="w-full transition duration-300 ease-linear align-middle" />
@@ -24,6 +24,30 @@
                     </a>
 </div>
 
-@endforeach
+@endforeach -->
+
+<div class="container">
+            <div class="row">
+            @foreach ($photos as $photo)
+                <div class="col-md-4 mt-3 col-lg-4">
+                    <img src="{{$photo->img}}" class="img-fluid" alt="image">
+                    <div>{{$photo->name}}</div>
+                    <div>{{$photo->name}}</div>
+                    <div>
+                        <form action="{{ route('remove', [$photo->id]) }}" method="POST">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" onclick="return confirm('¿Eliminar {{$photo->name}}?')">🗑️</button>
+                            <a class="editBtn" href="{{ route ('edit', ['id'=> $photo->id]) }}">✏️</a>
+                            <a class="detailBtn" href="{{ route ('details', ['id'=> $photo->id]) }}">👀</a>
+                            <a class="favBtn" href="{{ route ('addFav', [$photo->id]) }}" onclick="return confirm('{{$photo->name}} Added to your Favourites!')">FAV</a>
+                            <a class="favBtn" href="{{ route ('removeFav', [$photo->id]) }}">Remove Fav</a>
+                        </form>
+                    </div>
+                </div>
+            @endforeach
+
+            </div>
+        </div>
 
 @endsection
