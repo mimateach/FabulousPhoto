@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+
 
 class PhotoController extends Controller
 {
@@ -41,14 +44,7 @@ class PhotoController extends Controller
     {
         //
         $photo = request()->except('_token');
-        /*         $photo = Photo::create(
-           [
-               'name' => $photo->name,
-               'artist' => $photo->artist,
-               'img'   => $photo->img,
-               'location' => $photo->location,
-           ]
-           );  */
+
         Photo::create($photo);
         return redirect()->route('home');
     }
@@ -59,13 +55,11 @@ class PhotoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function detail($id)
     {
         //
         $photo = Photo::find($id);
-        return view('detailsPhoto', compact('photo'));
-
-
+        return view('detail', compact('photo'));
     }
 
     /**
@@ -109,4 +103,41 @@ class PhotoController extends Controller
 
         return redirect()->route('home');
     }
+
+    // Add to favourites
+
+    public function addToFav($id)
+    {
+
+        $user = User::find(Auth::id());
+        $photo = Photo::find($id);
+
+        $user->photo($id)->attach($photo);
+
+        return redirect()->route('home');
+    }
+
+    // Remove from favourites
+
+    public function removeFromFav($id)
+    {
+
+        $user = User::find(Auth::id());
+        $photo = Photo::find($id);
+
+        $user->photo($id)->detach($photo);
+
+        return redirect()->route('home');
+    }
+
+        // List of favourite pictures
+    public function listFavourites()
+    {
+        {
+            $user = User::find(Auth::id());
+            $photo_user = ($user->photo);
+            return view('favourites', compact('photo_user'));
+        }
+    }
+
 }

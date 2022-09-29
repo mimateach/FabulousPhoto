@@ -18,6 +18,10 @@ class Photo extends Model
             'location',
     ];
 
+    public function user(){
+        return $this->belongsToMany(User::class);
+    }
+
 }
 
 

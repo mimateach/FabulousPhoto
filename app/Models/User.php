@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'isAdmin'
+        //'isSuperadmin'
     ];
 
     /**
@@ -41,4 +43,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function photo(){
+        return $this->belongsToMany(Photo::class);
+
+    }
+    
 }
