@@ -25,7 +25,28 @@
 </div>
 
 @endforeach -->
-
+<div id="topPanel">
+        <div class="pageTitle">
+            <div class="pageName">
+                <div>
+                    <img src="{{ asset('img/cameraGreen.png') }}" class="icon camera">
+                </div>
+                <div class="page">Manage your photos</div>
+            </div>
+            <div class="options">
+                <div class="add" id="addPhoto">
+                    <img src="{{ asset('img/plusGreen.png') }}" class="icon plus">
+                    <a href="{{ route ('newPhoto') }}" class="button">NUEVA</a>
+                </div>
+                <div class="goFav">
+                    <div class="fav">
+                        <img src="{{ asset('img/heartGreen.png') }}" class="icon camera">
+                    </div>
+                    <div class="button fav"><button>FAVORITAS</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
 <div class="container">
             <div class="row">
             @foreach ($photos as $photo)
