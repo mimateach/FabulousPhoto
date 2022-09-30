@@ -49,6 +49,8 @@ Clona el proyecto:
 Crea una base de datos local en phpMyAdmin con los siguientes datos: 
 root, password: "".
 Nombre de la base de datos: FabPhoto
+Si creamos esa base de datos de cero tenemos que crear cuatro columnas: name, artist, location e img. 
+
 Una vez hecho esto y abierto el proyecto, crear un archivo .env en el que copiemos los datos del archivo .env.example, asegurándonos de que en las líneas 11 a 16 conste la siguiente información:
 ```bash
 DB_CONNECTION=mysql
@@ -63,7 +65,7 @@ Entrar en el directorio del proyecto en la terminal y ejecutar el siguiente coma
 "php artisant migration:fresh --seed".
 ```
 Esto actualizará nuestra base de datos.
-
+**Tendremos que ejecutar este comando cada vez que realizamos cambios en la base de datos del proyecto.**
 
 Instalar las dependencias:
 ```bash
@@ -88,44 +90,32 @@ Abrir desde el enlace generado con el comando **php artisan serve**
 
 ## Cómo usarla
 
-
-
 Para tener permiso para editar, añadir y eliminar eventos:
-Iniciar sesión como admin
-usuario, contraseña
 
-Quién 
+**Iniciar sesión como administrador**
+usuario: admin@fabphoto.com
+contraseña: password
 
-Instalación 
-Composer update, npm install, migrations 
+Para ver las opciones de usuario, **iniciar sesión como usuario:**
+usuario: user@fabphoto.com
+contraseña: password
 
-Diseño Responsive
-Creado logo para app de gestión de imágenes
-Vistas:
--Home. Opciones añadir foto, editar, eliminar y añadir a favoritos. 
--Favoritos. Opciones eliminar de favoritos y editar. 
--Detalle. Opciones editar y añadir a favoritos. 
+Es posible registrarse con un usuario nuevo. Tendremos las funciones del usuario común (añadir/ver/eliminar favoritos). 
 
-En la versión 1.2 (actualmente mergeada a main) sí hay usuarios. 
-Usuarios:
-- Usuario común, puede añadir imágenes a su lista de favoritos. 
-- Usuario administrador, puede añadir imágenes nuevas, así como editar y eliminar las existentes. 
-
-Detalles para hacer log in:
-
-Es posible registrarse con un usuario nuevo. 
+## Tests
 
 Tests unitarios para: crud completo y vista detalle.
+Para ejecutar los tests podemos usar diferentes comandos: 
+```bash
+  php artisan test
+```
+O bien: 
+```bash
+  php artisan test --filter CrudTest
+```
 
-Crear base de datos con nombre:
-Tabla nombrada __ con _ columnas, como la que se observa a continuación:
-servidores ___ y ____ abiertos
-migración
 
-
-Diferenciar entre requisitos y extras. 
-
-Previews:
+## Previews:
 
 Mobile
 
@@ -133,15 +123,23 @@ Desktop
 
 Tablet
 
-
-Abrir
+## Quick start
+```bash
 Npm run dev
+```
 +
+```bash
 PHP artisan serve
-+ servidores este y este abiertos
-
-Migrate fresh seed
+```
++
+Servidores abiertos
++
+```bash
+php artisan migrate:fresh --seed
+```
++
 Login
+
 
 
 
