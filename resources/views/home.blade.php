@@ -13,6 +13,7 @@
                 </div>
                 <div class="page">Galería de fotos</div>
             </div>
+            @if(Auth::check() && Auth::user()->isAdmin)
             <div class="options">
                 <div class="add" id="addPhoto">
                     <img src="{{ asset('img/plusGreen.png') }}" class="icon plus">
@@ -25,6 +26,17 @@
                     <a href="{{ route ('favourites') }}" class="button fav"><button>FAVORITAS</button></a>
                 </div>
             </div>
+            @endif
+            @if(Auth::check() && !Auth::user()->isAdmin)
+            <div class="userOptions">
+                <div class="goFav">
+                    <div class="fav">
+                        <img src="{{ asset('img/heartGreen.png') }}" class="icon">
+                    </div>
+                    <a href="{{ route ('favourites') }}" class="button fav"><button>FAVORITAS</button></a>
+                </div>
+            </div>
+            @endif
         </div>
     </div>
 
