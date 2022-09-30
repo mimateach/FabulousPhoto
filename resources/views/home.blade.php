@@ -46,10 +46,10 @@
                             <a class="editBtn" href="{{ route ('edit', ['id'=> $photo->id]) }}"><img src="{{ asset('img/editBlue.png') }}" class="icon edit"></a>
                             <button type="submit" onclick="return confirm('¿Eliminar {{$photo->name}}?')"><img src="{{ asset('img/binBlue.png') }}" class="icon bin"></button>
                             @if(Auth::check() && !Auth::user()->photo->contains($photo->id))
-                            <a class="favBtn" href="{{ route ('addFav', [$photo->id]) }}" onclick="return confirm('{{$photo->name}} Added to your Favourites!')"><img src="{{ asset('img/heartBlue.png') }}" class="icon heart"></a>
+                            <a class="favBtn" href="{{ route ('addFav', [$photo->id]) }}" onclick="return confirm('{{$photo->name}} añadido a tu lista de favoritos!')"><img src="{{ asset('img/heartBlue.png') }}" class="icon heart"></a>
                             @endif
                             @if(Auth::check() && Auth::user()->photo->contains($photo->id))
-                            <a class="favBtn" href="{{ route ('removeFav', [$photo->id]) }}"><img src="{{ asset('img/noHeartBlue.png') }}" class="icon camera"></a>
+                            <a class="favBtn" href="{{ route ('removeFav', [$photo->id]) }}" onclick="return confirm('Has eliminado {{$photo->name}} de tu lista de favoritos')"><img src="{{ asset('img/noHeartBlue.png') }}" class="icon camera"></a>
                             @endif
                         </form>
                     </div>

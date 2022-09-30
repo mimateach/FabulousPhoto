@@ -3,26 +3,23 @@
 @section('content')
 <section id="details">
     <div class="detailContent">
-        <div class="grid">
-            <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover" data-mdb-ripple="true" data-mdb-ripple-color="dark">
 
-                <img src="{{$photo->img}}" class="w-full transition duration-300 ease-linear align-middle" />
-
-                <div class="absolute right-0 bottom-0 left-0 w-full h-20 overflow-hidden bg-fixed" style="background-color: rgba(8, 3, 21, 0.61)">
-
-                    <div class="flex justify-items-start align-bottom items-end h-full">
-                        <h5 class="text-lg font-bold text-white m-6">{{$photo->name}}</h5>
-                        <p class="text-white m-5">{{$photo->artist}}</p>
-                    </div>
-                </div>
-                <div class="hover-overlay">
-                    <div class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100" style="background-color: rgba(253, 253, 253, 0.15)"></div>
-                </div>
-
-
+        <div class="card" style="width: 20rem;">
+            <img src="{{$photo->img}}" class="card-img-top" alt="{{$photo->name}}">
+            <div class="card-body">
+                <h5 class="title">{{$photo->name}}</h5>
+                <h5 class="subtitle">{{$photo->artist}}</h5>
+                <p class="text">Esta obra ha sido creada por {{$photo->artist}}. Además, se puede visitar en:</p> 
+                <p class="text location">{{$photo->location}}</p>
+                @if(Auth::check() && !Auth::user()->photo->contains($photo->id))
+                <a class="favBtn" href="{{ route ('addFav', [$photo->id]) }}" onclick="return confirm('{{$photo->name}} añadido a tu lista de favoritos!')"><img src="{{ asset('img/heartBlue.png') }}" class="icon heart detailed"></a>
+                @endif
+                @if(Auth::check() && Auth::user()->photo->contains($photo->id))
+                <a class="favBtn" href="{{ route ('removeFav', [$photo->id]) }}" onclick="return confirm('Has eliminado {{$photo->name}} de tu lista de favoritos')"><img src="{{ asset('img/noHeartBlue.png') }}" class="icon heart detailed"></a>
+                @endif
             </div>
-
         </div>
+
 
         <div class="goHome">
             <div class="fav">

@@ -168,8 +168,25 @@ li {
     background-color: var(--color-blue);
 }
 
-.detailContent{
-    width: 80vw;
+.subtitle {
+    font-size: 400;
+    font-style:oblique;
+    font-size: 2.5vh;
+    margin: 1vh 0 1vh 0;
+}
+
+.text{
+    font-weight: 400;
+    font-size: 2.5vh;
+    margin: 1.5vh 0 1.5vh 0;
+}
+.location{
+    font-weight: 600;
+}
+
+
+.detailed {
+    width: 8vw;
 }
 
 
@@ -198,8 +215,7 @@ li {
     align-items: center;
     padding: 3vh;
 }
-.formContent{
-}
+
 
 #addForm {
     font-family: 'Nunito', sans-serif;
