@@ -127,17 +127,17 @@ Tablet
 ```bash
 Npm run dev
 ```
-+
+➕
 ```bash
 PHP artisan serve
 ```
-+
+➕
 Servidores abiertos
-+
+➕
 ```bash
 php artisan migrate:fresh --seed
 ```
-+
+➕
 Login
 
 
