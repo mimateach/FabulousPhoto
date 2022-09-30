@@ -249,7 +249,19 @@ background-color: #ffffff;
 }
 
 
+#customBtn{
+    background-color: var(--color-green);
+    color: var(--color-blue);
+}
 
+.card-header {
+    background-color: var(--color-blue);
+    color: white;
+}
+
+.card {
+    margin-top: 10vh;
+}
 
 
 
