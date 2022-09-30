@@ -40,7 +40,7 @@ li {
     height: 7vh;
 }
 
-/*Style for home content*/
+/*Style for Home content*/
 
 #topPanel {
     background-color: var(--background-color-dark);
@@ -110,7 +110,9 @@ li {
     font-size: 2vh;
 }
 
-/*Style for gallery items */
+
+
+/*Style for Gallery items */
 
 .title {
     font-family: "Nunito", sans-serif;
@@ -153,6 +155,76 @@ li {
     font-weight: 500;
     font-size: 2vh;
 }
+
+
+/* Style for Details view */
+
+#details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3vh;
+    background-color: var(--color-blue);
+}
+
+.detailContent{
+    width: 80vw;
+}
+
+
+.detailContent .button {
+    background-color: var(--color-yellow);
+    border: none;
+    border-radius: 1.5vh;
+    padding: 1vh 1.5vw 1vh 1.5vw;
+    color: var(--color-blue);
+    font-weight: bold;
+    font-size: 2vh;
+    margin: 1vH;
+}
+
+.detailContent .goHome {
+    margin-top: 6vh;
+}
+
+
+/* Style for forms */
+
+#forms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3vh;
+}
+.formContent{
+}
+
+#addForm {
+    font-family: 'Nunito', sans-serif;
+    color: var(--color-blue);
+    font-size: 2vh;
+}
+
+.btn {
+    background-color: var(--color-blue);
+    color: white;
+}
+#addButton {
+    background-color: var(--color-green);
+    color: var(--color-blue);
+}
+
+#addButton:hover {
+background-color: #ffffff;
+}
+
+
+
+
+
+
 
 @media (max-width: 750px) {
     .options {

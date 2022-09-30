@@ -11,7 +11,7 @@
                 <div>
                     <img src="{{ asset('img/cameraGreen.png') }}" class="icon camera">
                 </div>
-                <div class="page">Manage your photos</div>
+                <div class="page">Galería de fotos</div>
             </div>
             <div class="options">
                 <div class="add" id="addPhoto">

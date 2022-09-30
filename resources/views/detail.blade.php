@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-
-<div class="grid">
+<section id="details">
+    <div class="detailContent">
+        <div class="grid">
             <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover" data-mdb-ripple="true" data-mdb-ripple-color="dark">
-                
+
                 <img src="{{$photo->img}}" class="w-full transition duration-300 ease-linear align-middle" />
 
                 <div class="absolute right-0 bottom-0 left-0 w-full h-20 overflow-hidden bg-fixed" style="background-color: rgba(8, 3, 21, 0.61)">
@@ -17,14 +18,19 @@
                 <div class="hover-overlay">
                     <div class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100" style="background-color: rgba(253, 253, 253, 0.15)"></div>
                 </div>
-                
-                
+
+
             </div>
 
         </div>
 
-        <div>            <a href="{{ route ('home') }}">
-                        VOLVER
-                    </a></div>
+        <div class="goHome">
+            <div class="fav">
+                <img src="{{ asset('img/homeGreen.png') }}" class="icon house">
+            </div>
+            <a href="{{ route ('home') }}" class="button fav"><button>INICIO</button></a>
+        </div>
+    </div>
+</section>
 
-                    @endsection
+@endsection
