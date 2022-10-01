@@ -116,12 +116,14 @@ O bien:
 
 
 ## Previews:
+<div align="center">
+<img align="center" src="public/readme/GIF-VistaMovil.gif">
+<img align="center" src="public/readme/GIF-VistaDesktop.gif" style="width:80%">
+<img align="center" src="public/readme/GIF-VistaUser.gif" style="width:80%">
+<img align="center" src="public/readme/GIF-Editar.gif" style="width:80%">
+<img align="center" src="public/readme/GIF-Add.gif" style="width:80%">
+</div>
 
-Mobile
-
-Desktop
-
-Tablet
 
 ## Quick start
 ```bash
@@ -143,15 +145,10 @@ Login
 
 
 
-🇬🇧  
-## Description
 
+## Author
+Inma Chicón
 
-## Functional Requirementes
-
-
-
-App creada por Inma Chicón
 
 
 ## License
