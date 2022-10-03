@@ -1,6 +1,6 @@
 <img src="public/logoBlue.svg" style="margin-left: 30px;">
 
-🇪🇸  
+
 ## Descripción
 Fabulous Photo es una app creada con PHP Laravel + Blade para gestionar imágenes con las siguientes opciones: editar, eliminar, añadir a lista de favoritos y eliminar de la lista. La gestión de esta app está limitada en función del rol del usuario. Si el usuario se loguea como usuario común o crea su propio usuario podrá añadir las imágenes que quiera a la lista de favoritos, ver las que tiene en la lista y eliminar las que ya no desee tener en favoritos. Estas funciones también las tiene el usuario administrador. Como usuario administrador también podrá añadir imágenes nuevas, así como editar y eliminar las imágenes existentes. 
 La aplicación es responsive, como se puede ver también en las previsualizaciones.
@@ -116,12 +116,14 @@ O bien:
 
 
 ## Previews:
+<div align="center">
+<img align="center" src="public/readme/GIF-VistaMovil.gif">
+<img align="center" src="public/readme/GIF-VistaDesktop.gif" style="width:80%">
+<img align="center" src="public/readme/GIF-VistaUser.gif" style="width:80%">
+<img align="center" src="public/readme/GIF-Editar.gif" style="width:80%">
+<img align="center" src="public/readme/GIF-Add.gif" style="width:80%">
+</div>
 
-Mobile
-
-Desktop
-
-Tablet
 
 ## Quick start
 ```bash
@@ -143,15 +145,10 @@ Login
 
 
 
-🇬🇧  
-## Description
 
+## Author
+Inma Chicón
 
-## Functional Requirementes
-
-
-
-App creada por Inma Chicón
 
 
 ## License
